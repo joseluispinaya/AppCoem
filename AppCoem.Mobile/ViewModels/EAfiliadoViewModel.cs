@@ -28,6 +28,7 @@ namespace AppCoem.Mobile.ViewModels
         public EAfiliadoViewModel(EAfiliadoDbContext context)
         {
             _dbContext = context;
+            EAfiliadoDto.Estado = true;
         }
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -46,7 +47,7 @@ namespace AppCoem.Mobile.ViewModels
                 {
                     var encontrado = await _dbContext.EAfiliados.FirstAsync(e => e.IdAfiliado == IdAfiliado);
                     EAfiliadoDto.IdAfiliado = encontrado.IdAfiliado;
-                    EAfiliadoDto.Idasoci = encontrado.Idasoci;
+                    //EAfiliadoDto.Idasoci = encontrado.Idasoci;
                     EAfiliadoDto.NroCI = encontrado.NroCI;
                     EAfiliadoDto.Nombres = encontrado.Nombres;
                     EAfiliadoDto.Apellidos = encontrado.Apellidos;
@@ -72,7 +73,7 @@ namespace AppCoem.Mobile.ViewModels
                 {
                     var tbEAfiliado = new EAfiliado
                     {
-                        Idasoci = EAfiliadoDto.Idasoci,
+                        //Idasoci = EAfiliadoDto.Idasoci,
                         NroCI = EAfiliadoDto.NroCI,
                         Nombres = EAfiliadoDto.Nombres,
                         Apellidos = EAfiliadoDto.Apellidos,
@@ -94,7 +95,7 @@ namespace AppCoem.Mobile.ViewModels
                 else
                 {
                     var encontrado = await _dbContext.EAfiliados.FirstAsync(e => e.IdAfiliado == IdAfiliado);
-                    encontrado.Idasoci = EAfiliadoDto.Idasoci;
+                    //encontrado.Idasoci = EAfiliadoDto.Idasoci;
                     encontrado.NroCI = EAfiliadoDto.NroCI;
                     encontrado.Nombres = EAfiliadoDto.Nombres;
                     encontrado.Apellidos = EAfiliadoDto.Apellidos;

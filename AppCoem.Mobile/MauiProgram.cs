@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 
 using AppCoem.Mobile.DataAccess;
+using AppCoem.Mobile.ViewModels;
+using AppCoem.Mobile.Views;
 
 namespace AppCoem.Mobile
 {
@@ -20,6 +22,16 @@ namespace AppCoem.Mobile
             var dbContext = new EAfiliadoDbContext();
             dbContext.Database.EnsureCreated();
             dbContext.Dispose();
+
+            builder.Services.AddDbContext<EAfiliadoDbContext>();
+
+            builder.Services.AddTransient<EAfiliadoPage>();
+            builder.Services.AddTransient<EAfiliadoViewModel>();
+
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<MainViewModel>();
+
+            Routing.RegisterRoute(nameof(EAfiliadoPage), typeof(EAfiliadoPage));
 
 
 #if DEBUG

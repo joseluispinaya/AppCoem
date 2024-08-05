@@ -6,8 +6,8 @@ namespace AppCoem.Mobile.DTOs
     {
         [ObservableProperty]
         public int idAfiliado;
-        [ObservableProperty]
-        public int idasoci;
+        //[ObservableProperty]
+        //public int idasoci;
         [ObservableProperty]
         public string? nroCI;
         [ObservableProperty]

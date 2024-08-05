@@ -6,7 +6,7 @@ namespace AppCoem.Mobile.Modelos
     {
         [Key]
         public int IdAfiliado { get; set; }
-        public int Idasoci { get; set; }
+        //public int Idasoci { get; set; }
         public string? NroCI { get; set; }
         public string? Nombres { get; set; }
         public string? Apellidos { get; set; }
